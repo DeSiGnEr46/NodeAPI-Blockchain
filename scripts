@@ -1,0 +1,5 @@
+peer chaincode query -C channel13 -n shipcc -c '{"Args":["get", "1" ]}'
+
+peer chaincode query -C channelall -n shipcc -c '{"Args":["getAll","1","10"]}'
+
+peer chaincode invoke -C channelall -n shipcc -c '{"Args":["set", "1", "Tornillo", "XC32", "Circular", "2mmX2mmx5mm", "23-01-2020", "Hierro", "Tornillo para portatiles", "1000", "0.04", "350", "Org1", "Org2", "Oliver", "30-01-2020"]}' --tls --cafile $ORDERER_CA

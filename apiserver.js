@@ -159,8 +159,6 @@ app.post('/api/addship', async function (req, res) {
         const contract = network.getContract('shipcc');
 
         // Submit the specified transaction.
-        // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
-        // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
         console.log(req.body);
         await contract.submitTransaction('set', req.body.key, req.body.producto, req.body.modelo, req.body.tipo, req.body.dimensiones,
             req.body.fechafab, req.body.materiales, req.body.descripcion, req.body.cantidad, req.body.precioud,
@@ -204,8 +202,6 @@ app.post('/api/editship', async function (req, res) {
         const contract = network.getContract('shipcc');
 
         // Submit the specified transaction.
-        // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
-        // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
         console.log(req.body);
         await contract.submitTransaction('edit', req.body.key, req.body.producto, req.body.modelo, req.body.tipo, req.body.dimensiones,
             req.body.fechafab, req.body.materiales, req.body.descripcion, req.body.cantidad, req.body.precioud,
